@@ -1,0 +1,18 @@
+@function vw($px-vw, $base-vw: 1440px) {
+  @return ($px-vw * 100vw) / $base-vw;
+}
+
+@function vw-mobile($px-vw, $base-vw: 425px) {
+  @return ($px-vw * 100vw) / $base-vw;
+}
+
+:root {
+  font-family: 'Open Sans', sans-serif;
+  font-size: vw(16px);
+}
+
+html,
+body {
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+}
