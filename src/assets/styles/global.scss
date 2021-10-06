@@ -1,3 +1,28 @@
+$primary: #483698;
+$secondary: #ffffff;
+$danger: #ff4136;
+
+@import "~/node_modules/bootstrap/scss/bootstrap.scss";
+@import "~/node_modules/bootstrap-vue/src/index.scss";
+
+$secondary-light: #f9f9f9;
+$secondary-grey: #b9b9b9;
+$secondary-grey-dark: #8a8a8a;
+$secondary-dark: #282828;
+$action: #ffe766;
+$action-dark: #fbde40;
+
+$app-colors: (
+  "secondary-light": $secondary-light,
+  "secondary-grey": $secondary-grey,
+  "secondary-grey-dark": $secondary-grey-dark,
+  "secondary-dark": $secondary-dark,
+  "action": $action,
+  "action-dark": $action-dark,
+);
+
+$theme-colors: map-merge($theme-colors, $app-colors);
+
 @function vw($px-vw, $base-vw: 1440px) {
   @return ($px-vw * 100vw) / $base-vw;
 }
@@ -7,12 +32,45 @@
 }
 
 :root {
-  font-family: 'Open Sans', sans-serif;
-  font-size: vw(16px);
+  --bg: #ffe766;
+  --primary: #483698;
+  --action: #fbde40;
+  --secondary-light: #f9f9f9;
+  --secondary-grey: #b9b9b9;
+  --secondary-grey-dark: #8a8a8a;
+  --secondary-dark: #282828;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: vw(13px);
 }
 
 html,
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   overflow-x: hidden;
+
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+}
+
+h1,
+h5,
+h6 {
+  color: $primary;
+}
+
+@media (max-width: 425px) {
+  :root {
+    font-size: vw-mobile(13.5px);
+  }
 }
