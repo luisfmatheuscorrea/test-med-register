@@ -1,17 +1,17 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import register from "./register";
+// import Vue from "vue";
+// import Vuex from "vuex";
+// import register from "./register";
 
-Vue.use(Vuex);
+// Vue.use(Vuex);
 
-export default function (/* { ssrContext } */) {
-  const Store = new Vuex.Store({
-    modules: {
-      register,
-    },
+// export default function (/* { ssrContext } */) {
+//   const Store = new Vuex.Store({
+//     modules: {
+//       register,
+//     },
 
-    strict: process.env.DEV,
-  });
+//     strict: process.env.DEV,
+//   });
 
-  return Store;
-}
+//   return Store;
+// }

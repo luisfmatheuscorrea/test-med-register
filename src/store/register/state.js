@@ -1,4 +1,4 @@
-const register = localStorage.getItem("register");
+const register = JSON.parse(localStorage.getItem("register"));
 const initialState = register || [];
 
 export default function () {

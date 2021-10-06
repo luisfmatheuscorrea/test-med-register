@@ -1,5 +1,16 @@
 <template>
   <div class="home">
+    <div
+      v-if="page > 0"
+      @click="
+        () => {
+          previousPage();
+        }
+      "
+      class="icon-back"
+    >
+      <b-icon icon="arrow-left-short"></b-icon>
+    </div>
     <b-card class="card-form">
       <b-card-body class="pl-5 pr-0">
         <h1>Sobre o profissional</h1>
@@ -33,7 +44,7 @@
             "
             type="submit"
             variant="primary"
-            >Próximo</b-button
+            >{{ page > 0 ? "Finalizar" : "Próximo" }}</b-button
           >
         </div>
       </b-card-body>
@@ -58,7 +69,11 @@ export default {
     nextPage() {
       if (this.page < 1) {
         this.page = this.page + 1;
-        console.log(this.page);
+      }
+    },
+    previousPage() {
+      if (this.page != 0) {
+        this.page = this.page - 1;
       }
     },
   },

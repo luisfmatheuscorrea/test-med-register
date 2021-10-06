@@ -1,5 +1,5 @@
 export function set(state, register) {
-  localStorage.setItem("register", register);
+  localStorage.setItem("register", JSON.stringify(register));
   state.current = register;
 }
 

@@ -7,15 +7,15 @@
           placeholder="Digite seu nome completo"
           class="input-form"
           trim
-          :state="form.name ? !$v.form.name.$error : null"
+          :state="name ? !$v.name.$error : null"
           aria-describedby="input-live-help"
-          v-model.trim="$v.form.name.$model"
+          v-model.trim="$v.name.$model"
         />
 
         <b-form-invalid-feedback id="input-live-feedback">
           {{
-            $v.form.name.required
-              ? !$v.form.name.minLength
+            $v.name.required
+              ? !$v.name.minLength
                 ? "Minímo de 3 letras"
                 : "Máximo de 48 letras"
               : "Esse campo é obrigatório"
@@ -25,20 +25,20 @@
 
       <b-form-group style="width: 80%" label="CPF*">
         <b-form-input
-          type="number"
           placeholder="Digite seu CPF"
           class="input-form"
+          v-mask="'###.###.###-##'"
           trim
           :max="11"
-          :state="form.cpf ? !$v.form.cpf.$error : null"
+          :state="cpf ? !$v.cpf.$error : null"
           aria-describedby="input-live-help"
-          v-model.number.trim="$v.form.cpf.$model"
+          v-model.trim="$v.cpf.$model"
         />
 
         <b-form-invalid-feedback id="input-live-feedback">
           {{
-            $v.form.cpf.required
-              ? !$v.form.cpf.minLength
+            $v.cpf.required
+              ? !$v.cpf.minLength
                 ? "Obrigatório 11 letras"
                 : "Obrigatório 11 letras"
               : "Esse campo é obrigatório"
@@ -48,20 +48,20 @@
 
       <b-form-group style="width: 80%" label="Número de celular*">
         <b-form-input
-          type="number"
           placeholder="Digite seu número de celular"
           class="input-form"
+          v-mask="'+55 (##) # ####-####'"
           trim
           :max="11"
-          :state="form.phone ? !$v.form.phone.$error : null"
+          :state="phone ? !$v.phone.$error : null"
           aria-describedby="input-live-help"
-          v-model.number.trim="$v.form.phone.$model"
+          v-model.trim="$v.phone.$model"
         />
 
         <b-form-invalid-feedback id="input-live-feedback">
           {{
-            $v.form.phone.required
-              ? !$v.form.phone.minLength
+            $v.phone.required
+              ? !$v.phone.minLength
                 ? "Obrigatório 11 letras"
                 : "Obrigatório 11 letras"
               : "Esse campo é obrigatório"
@@ -74,7 +74,7 @@
           <b-form-select
             placeholder="Selecione seu estado"
             class="input-form"
-            v-model="form.state"
+            v-model="state"
             :options="states"
           />
         </b-form-group>
@@ -83,9 +83,9 @@
           <b-form-select
             placeholder="Selecione sua cidade"
             class="input-form"
-            v-model="form.city"
-            :disabled="!form.state"
-            :options="form.state ? citys[form.state] : citys['NULL']"
+            v-model="city"
+            :disabled="!state"
+            :options="state ? citys[state] : citys['NULL']"
           />
         </b-form-group>
       </div>
@@ -103,18 +103,24 @@ import { required, minLength, maxLength } from "vuelidate/lib/validators";
 
 export default {
   name: "PersonalDetails",
-  created() {
-    this.checkRegister();
+  props: {
+    actualizeForm: {
+      type: Function,
+      default: () => {},
+    },
+  },
+  computed: {
+    register() {
+      return JSON.parse(localStorage.getItem("register"));
+    },
   },
   data() {
     return {
-      form: {
-        name: null,
-        cpf: null,
-        phone: null,
-        state: null,
-        city: null,
-      },
+      name: null,
+      cpf: null,
+      phone: null,
+      state: null,
+      city: null,
       fieldsStates: {
         name: null,
       },
@@ -132,30 +138,74 @@ export default {
       },
     };
   },
+  created() {
+    this.checkRegister();
+  },
+  watch: {
+    name: function () {
+      this.checkAndSave();
+    },
+    cpf: function () {
+      this.checkAndSave();
+    },
+    phone: function () {
+      this.checkAndSave();
+    },
+    state: function () {
+      this.checkAndSave();
+    },
+    city: function () {
+      this.checkAndSave();
+    },
+  },
   validations: {
-    form: {
-      name: {
-        required,
-        minLength: minLength(3),
-        maxLength: maxLength(48),
-      },
-      cpf: {
-        required,
-        minLength: minLength(11),
-        maxLength: maxLength(11),
-      },
-      phone: {
-        required,
-        minLength: minLength(11),
-        maxLength: maxLength(11),
-      },
+    name: {
+      required,
+      minLength: minLength(3),
+      maxLength: maxLength(48),
+    },
+    cpf: {
+      required,
+      minLength: minLength(14),
+      maxLength: maxLength(14),
+    },
+    phone: {
+      required,
+      minLength: minLength(20),
+      maxLength: maxLength(20),
+    },
+    state: {
+      required,
+    },
+    city: {
+      required,
     },
   },
   methods: {
     checkRegister() {
-      var register = this.$cookies.get("register");
+      if (this.register != null) {
+        this.name = this.register.name;
+        this.cpf = this.register.cpf;
+        this.phone = this.register.phone;
+        this.state = this.register.state;
+        this.city = this.register.city;
+      }
+    },
+    checkAndSave() {
+      var form = {
+        name: this.name,
+        cpf: this.cpf,
+        phone: this.phone,
+        state: this.state,
+        city: this.city,
+      };
 
-      register;
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        return;
+      } else {
+        localStorage.setItem("register", JSON.stringify(form));
+      }
     },
   },
 };
