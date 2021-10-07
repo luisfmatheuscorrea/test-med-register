@@ -196,6 +196,12 @@ export default {
         name: this.name,
         cpf: this.cpf,
         phone: this.phone,
+        // state:
+        //   this.state.value === "PA"
+        //     ? "Paraná"
+        //     : this.state.value === "RS"
+        //     ? "Rio Grande do Sul"
+        //     : "Santa Catarina",
         state: this.state,
         city: this.city,
       };

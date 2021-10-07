@@ -1,4 +1,4 @@
-.home {
+.review {
   width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -7,16 +7,6 @@
   justify-content: center;
 
   background-color: var(--bg);
-}
-
-.input-group-value {
-  .input-group-text:first-child {
-    border-radius: 0.5rem 0 0 0.5rem !important;
-  }
-
-  .input-group-text {
-    border-radius: 0 0.5rem 0.5rem 0 !important;
-  }
 }
 
 .card-form {
@@ -46,30 +36,33 @@
   }
 }
 
-.card-payment {
-  width: 100%;
-  border-radius: 0.8rem !important;
-  border: none !important;
-  box-shadow: 0 0.15rem 0.2rem rgba(0, 0, 0, 0.2);
-  background-color: var(--secondary-light) !important;
-  padding: 0rem 1.5rem;
-  margin-top: 1rem !important;
-
-  .card-body {
-    min-height: inherit !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-}
-
-.types-payment {
-  margin: 2rem 0;
-}
-
 .form-responsive {
   width: 52%;
   margin: 0 0.25rem;
+}
+
+.informations {
+  width: 53%;
+  padding: 0 1.1rem;
+
+  li {
+    list-style: none;
+    margin: 2.5rem 0;
+
+    h5 {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #000;
+    }
+
+    p {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: #000;
+    }
+  }
 }
 
 .img-page {
@@ -77,35 +70,12 @@
   width: 47%;
 }
 
-.input-form {
-  margin-bottom: 0.5rem;
-  height: 2.75rem !important;
-  border-radius: 0.5rem !important;
-  border: solid 0.05rem var(--primary) !important;
-}
-
-.input-value {
-  margin-bottom: 0.5rem;
-  height: 2.75rem !important;
-  border-radius: 0 !important;
-  border: solid 0.05rem var(--primary) !important;
-}
-
-.input-group-value {
-  .input-group-text {
-    background-color: var(--primary);
-    color: #fff;
-    font-weight: 700;
-    border: solid 0.05rem var(--primary) !important;
-  }
-}
-
 .actions-page {
   width: 52%;
 }
 
 @media (max-width: 425px) {
-  .home {
+  .review {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -124,12 +94,6 @@
     width: 100%;
     padding: 0 !important;
     margin: 0 0.25rem !important;
-  }
-
-  .input-form {
-    margin-bottom: 0.5rem;
-    height: 3rem !important;
-    border-radius: 0.5rem;
   }
 
   .actions-page {

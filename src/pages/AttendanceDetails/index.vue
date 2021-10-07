@@ -43,7 +43,7 @@
       <div class="types-payment">
         <label>Formas de pagamento da consulta*</label>
         <b-card class="card-payment">
-          <b-form-checkbox v-model="payments" value="pix"
+          <b-form-checkbox v-model="payments" value="Pix"
             ><strong style="font-weight: 700; margin-left: 2rem"
               >Pix</strong
             ></b-form-checkbox
@@ -51,7 +51,7 @@
         </b-card>
 
         <b-card class="card-payment">
-          <b-form-checkbox v-model="payments" value="dinheiro"
+          <b-form-checkbox v-model="payments" value="Dinheiro"
             ><strong style="font-weight: 700; margin-left: 2rem"
               >Em dinheiro</strong
             ></b-form-checkbox
@@ -59,13 +59,13 @@
         </b-card>
 
         <b-card class="card-payment">
-          <b-form-checkbox v-model="payments" value="cartao"
+          <b-form-checkbox v-model="payments" value="Cartão de crédito"
             ><strong style="font-weight: 700; margin-left: 2rem"
               >Cartão de crédito</strong
             ></b-form-checkbox
           >
           <b-form-group
-            v-if="payments.findIndex((e) => e === 'cartao') != -1"
+            v-if="payments.findIndex((e) => e === 'Cartão de crédito') != -1"
             label="Parcelamento em"
             style="margin-left: 3.5rem; margin-top: 1rem"
             v-slot="{ ariaDescribedby }"
@@ -128,12 +128,12 @@ export default {
       },
       specialities: [
         { value: null, text: "Selecione" },
-        { value: "cardio", text: "Cardiologia" },
-        { value: "dermato", text: "Dermatologia" },
-        { value: "neuro", text: "Neurologia" },
-        { value: "oftalmo", text: "Oftalmologia" },
-        { value: "psiqui", text: "Psiquiatria" },
-        { value: "uro", text: "Urologia" },
+        "Cardiologia",
+        "Dermatologia",
+        "Neurologia",
+        "Oftalmologia",
+        "Psiquiatria",
+        "Urologia",
       ],
     };
   },

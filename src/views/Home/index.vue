@@ -13,8 +13,14 @@
     </div>
     <b-card class="card-form">
       <b-card-body class="pl-5 pr-0">
-        <h1>Sobre o profissional</h1>
-        <h4 class="mt-2">Dados do profissional</h4>
+        <div v-if="page === 0">
+          <h1>Sobre o profissional</h1>
+          <h4 class="mt-2">Dados do profissional</h4>
+        </div>
+        <div v-if="page === 1">
+          <h1>Sobre o atendimento</h1>
+          <h4 class="mt-2">Detalhes do atendimento</h4>
+        </div>
         <PersonalDetails v-if="page === 0" />
         <AttendanceDetails v-if="page === 1" />
         <div class="actions-page mt-2">
@@ -36,6 +42,8 @@
               width: 100%;
               border-radius: 0.9rem;
               text-transform: uppercase;
+              font-family: 'Comfortaa', sans-serif;
+              font-weight: 600;
             "
             @click="
               () => {
@@ -69,6 +77,8 @@ export default {
     nextPage() {
       if (this.page < 1) {
         this.page = this.page + 1;
+      } else {
+        this.$router.push("/review");
       }
     },
     previousPage() {
