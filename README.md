@@ -1,24 +1,29 @@
-# test-facil-consulta
+# Med Register
+### Teste Técnico Fácil Consulta
+#### Linguagens e Frameworks
+- JavaScript
+- VueJS
+- Bootstrap
 
-## Project setup
+#
+## Instalação do Projeto
+Para instalar, clone o projeto e dentro do diretório principal do projeto dê:
 ```
-yarn install
+yarn
+```
+ou
+```
+npm i
 ```
 
-### Compiles and hot-reloads for development
+### Compilar e rodar o projeto
+Para rodar o projeto use:
 ```
 yarn serve
 ```
-
-### Compiles and minifies for production
+ou
 ```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
+npm run serve
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Pronto!
