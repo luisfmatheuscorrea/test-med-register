@@ -12,7 +12,7 @@
       <b-icon icon="arrow-left-short"></b-icon>
     </div>
     <b-card class="card-form">
-      <b-card-body class="pl-5 pr-0">
+      <b-card-body class="card-body-form pl-5 pr-0">
         <div v-if="page === 0">
           <h1>Sobre o profissional</h1>
           <h4 class="mt-2">Dados do profissional</h4>

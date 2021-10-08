@@ -9,7 +9,7 @@
   background-color: var(--bg);
 }
 
-.card-form {
+.card-finished {
   width: 63%;
   height: inherit !important;
   margin: 1.5rem 0 !important;
@@ -17,13 +17,19 @@
   border: none !important;
   box-shadow: 0 0.438rem 0.625rem rgba(0, 0, 0, 0.3);
 
-  .card-body-form {
+  .card-body-finished {
     min-height: 37vw;
     height: inherit !important;
     display: flex;
+    padding: 2.5rem 1.5rem;
     flex-direction: column;
     justify-content: space-between;
   }
+}
+
+.calendar-div {
+  width: 48%;
+  margin-right: 2%;
 }
 
 .icon-back {
@@ -41,30 +47,6 @@
 .form-responsive {
   width: 52%;
   margin: 0 0.25rem;
-}
-
-.informations {
-  width: 53%;
-  padding: 0 1.1rem;
-
-  li {
-    list-style: none;
-    margin: 2.5rem 0;
-
-    h5 {
-      font-family: "Open Sans", sans-serif;
-      font-weight: 600;
-      font-size: 1.2rem;
-      color: #000;
-    }
-
-    p {
-      font-family: "Open Sans", sans-serif;
-      font-weight: 400;
-      font-size: 1.1rem;
-      color: #000;
-    }
-  }
 }
 
 .img-page {
@@ -87,28 +69,8 @@
     background-color: var(--bg);
   }
 
-  .informations {
+  .calendar-div {
     width: 100%;
-    padding: 0 1.1rem;
-
-    li {
-      list-style: none;
-      margin: 2.5rem 0;
-
-      h5 {
-        font-family: "Open Sans", sans-serif;
-        font-weight: 600;
-        font-size: 1.2rem;
-        color: #000;
-      }
-
-      p {
-        font-family: "Open Sans", sans-serif;
-        font-weight: 400;
-        font-size: 1.1rem;
-        color: #000;
-      }
-    }
   }
 
   .img-page {
@@ -125,15 +87,15 @@
     width: 100%;
   }
 
-  .card-form {
+  .card-finished {
     width: 100%;
     margin-bottom: 0 !important;
     border-radius: 3rem 3rem 0 0 !important;
     border: none !important;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.3);
 
-    .card-body-form {
-      height: 155vw;
+    .card-body-finished {
+      min-height: 135vw;
       display: flex;
       padding: 2.2rem 0.75rem 0.75rem 0.55rem !important;
       margin: 0 !important;

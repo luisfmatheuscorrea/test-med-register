@@ -43,52 +43,58 @@
       <div class="types-payment">
         <label>Formas de pagamento da consulta*</label>
         <b-card class="card-payment">
-          <b-form-checkbox v-model="payments" value="Pix"
-            ><strong style="font-weight: 700; margin-left: 2rem"
-              >Pix</strong
-            ></b-form-checkbox
-          >
+          <b-card-body class="card-body-payment">
+            <b-form-checkbox v-model="payments" value="Pix"
+              ><strong style="font-weight: 700; margin-left: 2rem"
+                >Pix</strong
+              ></b-form-checkbox
+            >
+          </b-card-body>
         </b-card>
 
         <b-card class="card-payment">
-          <b-form-checkbox v-model="payments" value="Dinheiro"
-            ><strong style="font-weight: 700; margin-left: 2rem"
-              >Em dinheiro</strong
-            ></b-form-checkbox
-          >
+          <b-card-body class="card-body-payment">
+            <b-form-checkbox v-model="payments" value="Dinheiro"
+              ><strong style="font-weight: 700; margin-left: 2rem"
+                >Em dinheiro</strong
+              ></b-form-checkbox
+            >
+          </b-card-body>
         </b-card>
 
         <b-card class="card-payment">
-          <b-form-checkbox v-model="payments" value="Cartão de crédito"
-            ><strong style="font-weight: 700; margin-left: 2rem"
-              >Cartão de crédito</strong
-            ></b-form-checkbox
-          >
-          <b-form-group
-            v-if="payments.findIndex((e) => e === 'Cartão de crédito') != -1"
-            label="Parcelamento em"
-            style="margin-left: 3.5rem; margin-top: 1rem"
-            v-slot="{ ariaDescribedby }"
-          >
-            <b-form-radio
-              v-model="installment"
-              :aria-describedby="ariaDescribedby"
-              value="1x"
-              >1x, sem juros</b-form-radio
+          <b-card-body class="card-body-payment">
+            <b-form-checkbox v-model="payments" value="Cartão de crédito"
+              ><strong style="font-weight: 700; margin-left: 2rem"
+                >Cartão de crédito</strong
+              ></b-form-checkbox
             >
-            <b-form-radio
-              v-model="installment"
-              :aria-describedby="ariaDescribedby"
-              value="2x"
-              >2x, sem juros</b-form-radio
+            <b-form-group
+              v-if="payments.findIndex((e) => e === 'Cartão de crédito') != -1"
+              label="Parcelamento em"
+              style="margin-left: 3.5rem; margin-top: 1rem"
+              v-slot="{ ariaDescribedby }"
             >
-            <b-form-radio
-              v-model="installment"
-              :aria-describedby="ariaDescribedby"
-              value="3x"
-              >3x, sem juros</b-form-radio
-            >
-          </b-form-group>
+              <b-form-radio
+                v-model="installment"
+                :aria-describedby="ariaDescribedby"
+                value="1x"
+                >1x, sem juros</b-form-radio
+              >
+              <b-form-radio
+                v-model="installment"
+                :aria-describedby="ariaDescribedby"
+                value="2x"
+                >2x, sem juros</b-form-radio
+              >
+              <b-form-radio
+                v-model="installment"
+                :aria-describedby="ariaDescribedby"
+                value="3x"
+                >3x, sem juros</b-form-radio
+              >
+            </b-form-group>
+          </b-card-body>
         </b-card>
       </div>
     </b-form>

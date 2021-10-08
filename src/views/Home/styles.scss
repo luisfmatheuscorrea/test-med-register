@@ -23,10 +23,11 @@
   width: 63%;
   margin: 1.5rem 0 !important;
   border-radius: 1.5rem !important;
+  margin-bottom: 0 !important;
   border: none !important;
   box-shadow: 0 0.438rem 0.625rem rgba(0, 0, 0, 0.3);
 
-  .card-body {
+  .card-body-form {
     min-height: 37vw;
     display: flex;
     flex-direction: column;
@@ -55,8 +56,9 @@
   padding: 0rem 1.5rem;
   margin-top: 1rem !important;
 
-  .card-body {
+  .card-body-payment {
     min-height: inherit !important;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -107,13 +109,29 @@
 @media (max-width: 425px) {
   .home {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
 
     background-color: var(--bg);
+  }
+
+  .types-payment {
+    margin: 2rem 0;
+  }
+
+  .icon-back {
+    margin-right: 80vw !important;
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+
+    svg {
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
   }
 
   .img-page {
@@ -139,14 +157,37 @@
   .card-form {
     width: 100%;
     border-radius: 3rem 3rem 0 0 !important;
+    margin: 0 !important;
     border: none !important;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.3);
+    min-height: 45rem !important;
 
-    .card-body {
-      height: 155vw;
+    .card-body-form {
+      height: inherit !important;
       display: flex;
       padding: 2.2rem 0.75rem 0.75rem 0.55rem !important;
       margin: 0 !important;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  .card-payment {
+    width: 100%;
+    border-radius: 0.8rem !important;
+    border: none !important;
+    box-shadow: 0 0.15rem 0.2rem rgba(0, 0, 0, 0.2);
+    background-color: var(--secondary-light) !important;
+    padding: 0 1.5rem !important;
+    margin: 0 !important;
+    margin-top: 1rem !important;
+    height: inherit !important;
+
+    .card-body-payment {
+      height: inherit !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
