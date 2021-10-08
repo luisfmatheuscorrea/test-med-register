@@ -39,8 +39,8 @@
           {{
             $v.cpf.required
               ? !$v.cpf.minLength
-                ? "Obrigatório 11 letras"
-                : "Obrigatório 11 letras"
+                ? "Obrigatório 11 números"
+                : "Obrigatório 11 números"
               : "Esse campo é obrigatório"
           }}
         </b-form-invalid-feedback>
@@ -62,8 +62,8 @@
           {{
             $v.phone.required
               ? !$v.phone.minLength
-                ? "Obrigatório 11 letras"
-                : "Obrigatório 11 letras"
+                ? "Obrigatório 11 números"
+                : "Obrigatório 11 números"
               : "Esse campo é obrigatório"
           }}
         </b-form-invalid-feedback>

@@ -18,7 +18,7 @@
             style="font-weight: 900; font-size: 2.8rem; color: var(--primary)"
             >{{ profissional.name }}</strong
           >
-          Bem-vindo!
+          Bem-vindo(a)!
         </h2>
         <FinishedDetails v-bind="{ profissional: getProfissional }" />
       </b-card-body>
